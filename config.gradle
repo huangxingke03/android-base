@@ -1,6 +1,7 @@
 ext {
     library = [
             leakcanary                   : 'com.squareup.leakcanary:leakcanary-android:2.11',
-            baseRecyclerViewAdapterHelper: "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta14"
+            baseRecyclerViewAdapterHelper: "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta14",
+            logger: 'com.orhanobut:logger:2.2.0'
     ]
 }

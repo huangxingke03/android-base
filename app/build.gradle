@@ -43,4 +43,5 @@ dependencies {
 
     implementation rootProject.ext.library.leakcanary
     implementation rootProject.ext.library.baseRecyclerViewAdapterHelper
+    implementation rootProject.ext.library.logger
 }

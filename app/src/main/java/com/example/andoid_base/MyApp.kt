@@ -1,12 +1,14 @@
 package com.example.andoid_base
 
 import android.app.Application
+import com.example.andoid_base.util.LogUtil
 import leakcanary.LeakCanary
 
 class MyApp:Application(){
     override fun onCreate() {
         super.onCreate()
         leakCanaryConfig()
+        LogUtil.init()
     }
     private fun leakCanaryConfig() {
         //App 处于前台时检测保留对象的阈值，默认是 5
