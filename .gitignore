@@ -1,5 +1,7 @@
 *.iml
 .gradle
+/aidl_client/build
+/aidl_server/build
 /build
 .idea
 app/build

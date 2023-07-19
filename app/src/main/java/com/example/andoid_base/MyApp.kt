@@ -1,15 +1,16 @@
 package com.example.andoid_base
 
 import android.app.Application
-import com.example.andoid_base.util.LogUtil
+import com.example.base_utils.LogUtils
 import leakcanary.LeakCanary
 
-class MyApp:Application(){
+class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         leakCanaryConfig()
-        LogUtil.init()
+        LogUtils.init()
     }
+
     private fun leakCanaryConfig() {
         //App 处于前台时检测保留对象的阈值，默认是 5
         LeakCanary.config = LeakCanary.config.copy(retainedVisibleThreshold = 3)
