@@ -4,6 +4,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('/Users/huangxingke/Hxk/development/CodeLibrary/AndroidProject/andoid_work/debug.jks')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'debug'
+        }
+    }
     namespace 'com.example.andoid_base'
     compileSdk 33
 
