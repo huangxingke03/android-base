@@ -1,12 +1,14 @@
-package com.example.andoid_base.util
+package com.example.base_utils
 
+import com.example.base_utils.bean.PrintInfo
 import com.orhanobut.logger.*
+import java.util.*
 
 /**
  *  implementation 'com.orhanobut:logger:2.2.0'
  *
  */
-object LogUtil {
+object LogUtils {
     fun init() {
         val formatStrategy: FormatStrategy = PrettyFormatStrategy.newBuilder()
             .showThreadInfo(false) // (Optional) Whether to show thread info or not. Default true
@@ -22,10 +24,21 @@ object LogUtil {
             }
         })
     }
+
     fun d(content: Object) {
         Logger.d(content)
     }
-    fun d(message:String , vararg args:Object) {
-        Logger.d(message,args)
+
+    fun d(message: String, vararg args: Object) {
+        Logger.d(message,* args)
     }
+
+    fun list(content: Object) {
+        Logger.d(content)
+    }
+
+    fun d(arrayList: ArrayList<Object>) {
+        Logger.d(arrayList)
+    }
+
 }
