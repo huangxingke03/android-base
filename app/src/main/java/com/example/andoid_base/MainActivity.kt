@@ -20,15 +20,14 @@ import java.util.concurrent.ConcurrentHashMap
 class MainActivity : AppCompatActivity() {
 
 
-
     @RequiresApi(Build.VERSION_CODES.M)
     var arrySet = ArraySet<String>()
 
-    var linkHashSet=LinkedHashSet<String>()
-//    var arryList = arrayListOf(1, 2, 3, 4, 5, 6)
+    var linkHashSet = LinkedHashSet<String>()
+
+    //    var arryList = arrayListOf(1, 2, 3, 4, 5, 6)
     var arryList = ArrayList<String>()
     var linkList = LinkedList<String>()
-
 
 
     var hashMap = HashMap<String, String>()
@@ -36,11 +35,11 @@ class MainActivity : AppCompatActivity() {
     var concurrentHashMap = ConcurrentHashMap<String, String>()
     var linkHashMap = LinkedHashMap<String, String>()
 
-    var treeMap=TreeMap<String,String>()
+    var treeMap = TreeMap<String, String>()
 
-    var array1= intArrayOf(1,2,3,4,5,6)
+    var array1 = intArrayOf(1, 2, 3, 4, 5, 6)
 
-    var array2= intArrayOf(5,6,7,8)
+    var array2 = intArrayOf(5, 6, 7, 8)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,13 +62,15 @@ class MainActivity : AppCompatActivity() {
 
         }
         findViewById<Button>(R.id.button3).setOnClickListener {
-//            hashMap["hashMapKey1"] = "hashMapValue1"
-            hashMap["hashMapKey2"] = "hashMapValue2"
-            hashMap.put("hashMapKey3","hashMapValue3")
+            hashMap.put("hashMapKey1", "hashMapValue1")
+            hashMap.put("hashMapKey2", "hashMapValue2")
+            hashMap.put("hashMapKey3", "hashMapValue3")
+            val hashMapValue1 = hashMap.get("hashMapKey3")
+            val hashMapValue2 = hashMap.getValue("hashMapKey2")
 
+            linkHashMap.put("linkHashMapKey1", "linkHashMapValue1")
 //            val value1 = hashMap["hashMapKey1"]
-//
-//            val value2 = hashMap.getValue("hashMapKey2")
+
 //
 //            hashMap.remove("hashMapValue3")
         }
