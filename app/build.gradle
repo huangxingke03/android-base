@@ -6,7 +6,7 @@ plugins {
 android {
     signingConfigs {
         debug {
-            storeFile file('/Users/huangxingke/Hxk/development/CodeLibrary/AndroidProject/andoid_work/debug.jks')
+            storeFile file('../debug.jks')
             storePassword '123456'
             keyPassword '123456'
             keyAlias 'debug'
@@ -53,14 +53,12 @@ dependencies {
     implementation rootProject.ext.library.rxJava3
     implementation rootProject.ext.library.rxandroid
 
-    implementation 'com.squareup.leakcanary:leakcanary-android:2.12'
     implementation rootProject.ext.library.baseRecyclerViewAdapterHelper
 
     implementation rootProject.ext.library.retrofit
+    implementation rootProject.ext.library.logInterceptor
     implementation rootProject.ext.library.converterGson
     implementation rootProject.ext.library.adapterRxjava3
 
-
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
-//    implementation rootProject.ext.library.fastjson
+    implementation rootProject.ext.library.leakcanary
 }

@@ -1,6 +1,6 @@
 ext {
     library = [
-            leakcanary                   : 'com.squareup.leakcanary:leakcanary-android:2.11',
+            leakcanary                   : 'com.squareup.leakcanary:leakcanary-android:2.12',
             baseRecyclerViewAdapterHelper: "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta14",
             logger: 'com.orhanobut:logger:2.2.0',
             jsbridge:'com.github.lzyzsd:jsbridge:1.0.4',
@@ -9,6 +9,6 @@ ext {
             adapterRxjava3:'com.squareup.retrofit2:adapter-rxjava3:2.9.0',
             rxandroid:'io.reactivex.rxjava3:rxandroid:3.0.2',
             rxJava3:'io.reactivex.rxjava3:rxjava:3.1.6',
-            logInterceptor:'com.squareup.okhttp3:logging-interceptor:4.10.0',
+            logInterceptor:'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11',
     ]
 }
