@@ -20,7 +20,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 
 class CityListActivity : AppCompatActivity() {
-    var data = arrayListOf("北京", "上海", "广州", "深圳", "沈阳")
+    var data = arrayListOf("北京", "上海", "广州", "深圳", "沈阳","河南")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather_list)
