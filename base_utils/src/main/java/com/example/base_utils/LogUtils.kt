@@ -1,6 +1,5 @@
 package com.example.base_utils
 
-import com.example.base_utils.bean.PrintInfo
 import com.orhanobut.logger.*
 import java.util.*
 

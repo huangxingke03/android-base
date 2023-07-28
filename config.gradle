@@ -10,6 +10,5 @@ ext {
             rxandroid:'io.reactivex.rxjava3:rxandroid:3.0.2',
             rxJava3:'io.reactivex.rxjava3:rxjava:3.1.6',
             logInterceptor:'com.squareup.okhttp3:logging-interceptor:4.10.0',
-            fastjson2:'com.alibaba.fastjson2:fastjson2:2.0.35'
     ]
 }
