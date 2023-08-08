@@ -1,6 +1,7 @@
 package com.example.andoid_base
 
 import android.app.Application
+import com.alibaba.android.arouter.launcher.ARouter
 import com.example.base_utils.LogUtils
 import leakcanary.LeakCanary
 
@@ -9,6 +10,11 @@ class MyApp : Application() {
         super.onCreate()
         leakCanaryConfig()
         LogUtils.init()
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog()
+            ARouter.openDebug()
+        }
+        ARouter.init(this)
     }
 
     private fun leakCanaryConfig() {
