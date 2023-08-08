@@ -24,20 +24,21 @@ object LogUtils {
         })
     }
 
-    fun d(content: Object) {
+    fun <T> d(content: T) {
         Logger.d(content)
     }
 
     fun d(message: String, vararg args: Object) {
-        Logger.d(message,* args)
+        Logger.d(message, * args)
     }
+    fun d(arrayList: ArrayList<Object>) {
+        Logger.d(arrayList)
+    }
+
 
     fun list(content: Object) {
         Logger.d(content)
     }
 
-    fun d(arrayList: ArrayList<Object>) {
-        Logger.d(arrayList)
-    }
 
 }
