@@ -2,7 +2,12 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
-
+apply plugin: 'kotlin-kapt'
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 android {
     signingConfigs {
         debug {
@@ -24,11 +29,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//            }
+//        }
+
     }
 
     buildTypes {
@@ -43,6 +49,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    packagingOptions {
+        exclude 'META-INF/androidx.*'
     }
 }
 
@@ -69,6 +78,10 @@ dependencies {
     implementation rootProject.ext.library.lifecycleViewmodelCompose
     implementation rootProject.ext.library.runtimeLivedata
     //arouter
-    implementation rootProject.ext.library.arouterApi
-    annotationProcessor rootProject.ext.library.arouterCompiler
+    implementation(rootProject.ext.library.arouterApi) {
+        exclude group: 'com.android.support', module: 'support-compat'
+        exclude group: 'com.android.support', module: 'loader'
+        exclude group: 'com.android.support', module: 'versionedparcelable'
+    }
+    kapt rootProject.ext.library.arouterCompiler
 }
