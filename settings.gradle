@@ -16,7 +16,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "andoid_work"
 include ':app'
-include ':aidl_client'
-include ':aidl_server'
-include ':base_utils'
-
+include ':module_aidl_client'
+include ':module_aidl_server'
+include ':module_utils'
+include ':module_kotlin'
+include ':module_java'

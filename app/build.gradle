@@ -1,22 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
-apply plugin: 'kotlin-kapt'
-kapt {
-    arguments {
-        arg("AROUTER_MODULE_NAME", project.getName())
-    }
-}
+
 android {
-    signingConfigs {
-        debug {
-            storeFile file('../debug.jks')
-            storePassword '123456'
-            keyPassword '123456'
-            keyAlias 'debug'
-        }
-    }
     namespace 'com.example.andoid_base'
     compileSdk 33
 
@@ -26,21 +14,23 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-//        javaCompileOptions {
-//            annotationProcessorOptions {
-//                arguments = [AROUTER_MODULE_NAME: project.getName()]
-//            }
-//        }
-
+        buildConfigField "boolean", "isModule", "$isModule"
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('../debug.jks')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'debug'
         }
     }
     compileOptions {
@@ -51,13 +41,20 @@ android {
         jvmTarget = '1.8'
     }
 }
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation project(path: ':base_utils')
+    implementation project(path: ':module_utils')
+    implementation project(path: ':module_kotlin')
+    implementation project(path: ':module_java')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
