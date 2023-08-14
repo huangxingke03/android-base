@@ -1,4 +1,4 @@
-package com.example.base_utils
+package com.example.common
 
 import com.orhanobut.logger.*
 import java.util.*

@@ -1,4 +1,4 @@
-package com.example.base_utils
+package com.example.common
 
 import com.google.gson.Gson
 

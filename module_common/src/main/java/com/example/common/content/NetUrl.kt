@@ -1,4 +1,4 @@
-package com.example.andoid_base.weather.net
+package com.example.common.content
 
 object NetUrl {
     val weather_base_url="https://restapi.amap.com/"
