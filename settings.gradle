@@ -18,6 +18,7 @@ rootProject.name = "andoid_work"
 include ':app'
 include ':module_aidl_client'
 include ':module_aidl_server'
-include ':module_utils'
+include ':module_common'
 include ':module_kotlin'
 include ':module_java'
+include ':module_function'
