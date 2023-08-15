@@ -27,9 +27,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".weather.CityListActivity"
-            android:exported="false"></activity>
-        <activity
             android:name=".webView.WebViewActivity"
             android:exported="false">
             <meta-data

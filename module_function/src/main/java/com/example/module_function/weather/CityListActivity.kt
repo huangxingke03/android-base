@@ -1,17 +1,16 @@
-package com.example.andoid_base.weather
+package com.example.module_function.weather
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
-import com.example.andoid_base.R
-import com.example.andoid_base.weather.data.WeatherInfo
-import com.example.andoid_base.weather.net.RetrofitManager
-import com.example.andoid_base.weather.net.service.SearchWeather
-import com.example.base_utils.LogUtils
+import com.example.common.LogUtils
+import com.example.common.net.RetrofitManager
+import com.example.module_function.R
+import com.example.module_function.net.SearchWeather
+import com.example.module_function.weather.data.WeatherInfo
 import com.google.gson.Gson
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observer
@@ -33,7 +32,7 @@ class CityListActivity : AppCompatActivity() {
             )
         city_list.setOnItemClickListener { parent, view, position, id ->
             val searchWeather =
-                RetrofitManager().getService(SearchWeather::class.java).searchWeather1(
+                RetrofitManager.getInstance().getService(SearchWeather::class.java).searchWeather1(
                     "60914564e8cb7ca7b497530783a34882", when (position) {
                         0 -> "110000"
                         1 -> "310000"

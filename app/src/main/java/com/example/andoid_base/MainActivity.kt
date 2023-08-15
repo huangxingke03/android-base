@@ -1,23 +1,16 @@
 package com.example.andoid_base
 
-import android.content.Intent
 import android.os.*
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Handler.Callback
 import android.util.ArraySet
 import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import com.alibaba.android.arouter.launcher.ARouter
-import com.bumptech.glide.Glide
 import com.example.andoid_base.handle.Handle1
 import com.example.andoid_base.handle.Handle2
-import com.example.andoid_base.weather.CityListActivity
-import com.example.base_utils.JsonUtils
-import com.example.base_utils.LogUtils
-import com.example.base_utils.resource.PagePath
-import java.util.Arrays
+import com.example.common.JsonUtils
+import com.example.common.LogUtils
+import com.example.common.content.PagePath
 import java.util.Hashtable
 import java.util.LinkedHashMap
 import java.util.LinkedHashSet
@@ -29,7 +22,6 @@ import java.util.concurrent.LinkedBlockingDeque
 
 class MainActivity : AppCompatActivity() {
 
-
     @RequiresApi(Build.VERSION_CODES.M)
     var arrySet = ArraySet<String>()
 
@@ -40,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
     var arryList = ArrayList<String>()
     var linkList = LinkedList<String>()
-
 
     var hashMap = HashMap<String, String>()
     var hashtable = Hashtable<String, String>()
@@ -69,24 +60,24 @@ class MainActivity : AppCompatActivity() {
         initContainer()
 //        val imageview1 = findViewById<ImageView>(R.id.imageview1)
 //        Glide.with(this).load(url1).into(imageview1)
-
         findViewById<Button>(R.id.button1).setOnClickListener {
 //            buttonClick()
-            ARouter.getInstance().build(PagePath.app_java_main_page).navigation()
-//            handle1.sendMessage(Message().apply { what = 100 })
+            ARouter.getInstance().build(PagePath.ModuleKotlinPage.FUNCTION_PAGE).navigation()
         }
         findViewById<Button>(R.id.button2).setOnClickListener {
 //            button2Click()
-            ARouter.getInstance().build(PagePath.module_java_main_page).navigation()
-//            handle2.sendMessage(Message().apply { what = 200 })
+            ARouter.getInstance().build(PagePath.ModuleKotlinPage.TEST_PAGE).navigation()
         }
         findViewById<Button>(R.id.button3).setOnClickListener {
-            ARouter.getInstance().build(PagePath.module_kotlin_main_page).navigation()
+//            ARouter.getInstance().build(PagePath.ModuleKotlinPage.MAIN_PAGE).navigation()
 //            button3Click()
+            ARouter.getInstance().build(PagePath.ModuleKotlinPage.MAIN_PAGE).navigation()
         }
         findViewById<Button>(R.id.button4).setOnClickListener {
 //            button4Click()
+//            ARouter.getInstance().build(PagePath.module_common_test_page).navigation()
             linkHashMapAccessOrderFalse.get("linkHashMapAccessOrderFalseKey3")
+
         }
     }
 

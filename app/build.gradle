@@ -15,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "boolean", "isModule", "$isModule"
+//        buildConfigField "boolean", "isModule", "$isModule"
     }
 
     buildTypes {
@@ -52,25 +52,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation project(path: ':module_utils')
+    implementation project(path: ':module_common')
     implementation project(path: ':module_kotlin')
     implementation project(path: ':module_java')
+    implementation project(path: ':module_function')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-    implementation rootProject.ext.library.rxJava3
-    implementation rootProject.ext.library.rxandroid
-    implementation rootProject.ext.library.baseRecyclerViewAdapterHelper
-    implementation rootProject.ext.library.retrofit
-    implementation rootProject.ext.library.logInterceptor
-    implementation rootProject.ext.library.converterGson
-    implementation rootProject.ext.library.adapterRxjava3
-    implementation rootProject.ext.library.leakcanary
-    implementation rootProject.ext.library.glide
-    //compose
-    implementation rootProject.ext.library.lifecycleViewmodelCompose
-    implementation rootProject.ext.library.runtimeLivedata
     //arouter
     implementation rootProject.ext.library.arouterApi
     kapt rootProject.ext.library.arouterCompiler

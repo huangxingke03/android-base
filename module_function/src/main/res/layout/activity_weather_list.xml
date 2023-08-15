@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".weather.CityListActivity">
+    tools:context="com.example.module_function.weather.CityListActivity">
 
     <ListView
         android:id="@+id/city_list"

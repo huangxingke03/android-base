@@ -1,4 +1,4 @@
-package com.example.andoid_base.weather.adapter
+package com.example.module_function.weather.adapter
 
 import android.view.View
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package com.example.andoid_base.weather.data
+package com.example.module_function.weather.data
 
 data class WeatherInfo(
     var status: String? = null,

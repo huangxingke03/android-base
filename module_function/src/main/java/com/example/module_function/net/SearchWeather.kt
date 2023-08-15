@@ -1,6 +1,6 @@
-package com.example.andoid_base.weather.net.service
+package com.example.module_function.net
 
-import com.example.andoid_base.weather.data.WeatherInfo
+import com.example.module_function.weather.data.WeatherInfo
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.Call
 import retrofit2.http.GET
