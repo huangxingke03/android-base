@@ -1,16 +1,16 @@
-package com.example.andoid_base
+package com.example.module_home.ui
 
 import android.os.*
-import androidx.appcompat.app.AppCompatActivity
 import android.util.ArraySet
 import android.widget.Button
 import androidx.annotation.RequiresApi
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.example.andoid_base.handle.Handle1
-import com.example.andoid_base.handle.Handle2
 import com.example.common.JsonUtils
 import com.example.common.LogUtils
 import com.example.common.content.PagePath
+import com.example.common.ui.ARouterActivity
+import com.example.module_home.R
 import java.util.Hashtable
 import java.util.LinkedHashMap
 import java.util.LinkedHashSet
@@ -20,7 +20,11 @@ import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.LinkedBlockingDeque
 
-class MainActivity : AppCompatActivity() {
+/**
+ * 首页
+ */
+@Route(path = PagePath.ModuleMainPage.HOME_PAGE)
+class HomeActivity : ARouterActivity() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     var arrySet = ArraySet<String>()
@@ -50,13 +54,11 @@ class MainActivity : AppCompatActivity() {
     var arrayBlockingQueue = ArrayBlockingQueue<String>(5)
     var time = 10
     var url1 = "http://pic1.win4000.com/wallpaper/c/58f8211a3a604.jpg"
-    var handle1 = Handle1(Looper.getMainLooper())
-    var handle2 = Handle2(Looper.getMainLooper())
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
         initContainer()
 //        val imageview1 = findViewById<ImageView>(R.id.imageview1)
 //        Glide.with(this).load(url1).into(imageview1)
