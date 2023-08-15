@@ -23,4 +23,9 @@ object PagePath {
     object ModuleCommonPage {
         const val TEST_PAGE = "/common/module/test/page"
     }
+
+    object ModuleMainPage {
+        const val WELCOME_PAGE = "/main/module/welcome/page"
+        const val HOME_PAGE = "/main/module/home/page"
+    }
 }
