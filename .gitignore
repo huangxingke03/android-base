@@ -1,7 +1,10 @@
 *.iml
 .gradle
-/aidl_client/build
-/aidl_server/build
+/module_compose/build
+/module_common/build
+/module_function/build
+/module_java/build
+/module_kotlin/build
 /build
 .idea
 app/build
