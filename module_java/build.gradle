@@ -1,22 +1,20 @@
-if (isModule.toBoolean()) {
-    apply plugin: 'com.android.library'
-} else {
+if (isModuleDebug.toBoolean()) {
     apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
 }
 android {
     namespace 'com.example.module_java'
     compileSdk 33
 
     defaultConfig {
-        if (!isModule.toBoolean()) {
+        if (isModuleDebug.toBoolean()) {
             applicationId "com.example.module_java"
         }
         minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"
-//        buildConfigField("boolean", "isModule", isModule)
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -38,10 +36,10 @@ android {
     }
     sourceSets {
         main {
-            if (isModule.toBoolean()) {
-                manifest.srcFile '/src/main/manifest/AndroidManifest.xml'
+            if (isModuleDebug.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
             } else {
-                manifest.srcFile '/src/main/AndroidManifest.xml'
+                manifest.srcFile 'src/main/AndroidManifest.xml'
             }
         }
     }
@@ -51,7 +49,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation project(path: ':module_utils')
+    implementation project(path: ':module_common')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
